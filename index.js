@@ -30,12 +30,13 @@ const cancelEmployee = () => {
 const updateList = (arrEmployees) => {
   let employeeList = document.querySelector("ul#employees-list");
   let filters = filterList();
-  console.log(filters);
   employeeList.innerHTML = "";
   arrEmployees.forEach((employee) => {
-    let li = document.createElement("li");
-    li.textContent = `${employee.name} ${employee.age} ${employee.job} ${employee.email}`;
-    employeeList.append(li);
+    if(filters.includes(employee.job) || filters.includes("Alla") || filters.length === 0){
+        let li = document.createElement("li");
+        li.textContent = `${employee.name} ${employee.age} ${employee.job} ${employee.email}`;
+        employeeList.append(li);
+    }
   });
 };
 
@@ -61,5 +62,5 @@ document
   .addEventListener("click", cancelEmployee);
 document
   .querySelectorAll("input[type=checkbox]").forEach((check) => {
-    check.addEventListener("change", updateList(employees));
+    check.addEventListener("change", () =>updateList(employees));
   });

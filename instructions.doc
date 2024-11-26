@@ -23,7 +23,7 @@ Nivå 1
 
 Nivå 2
 [X] Skapa en checkbox för varje yrkesroll som finns.
-[] Lägg till funktionalitet för att filtrera de anställda baserat på yrkesroll.
+[X] Lägg till funktionalitet för att filtrera de anställda baserat på yrkesroll.
 [] Skapa knappar för att sortera listan på:
     [] Förnamn (stigande och fallande)
     [] Ålder (stigande och fallande).

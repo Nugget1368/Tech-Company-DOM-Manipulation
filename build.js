@@ -24,8 +24,10 @@ const buildFilter = () => {
         let input = document.createElement("input");
         input.type = "checkbox";
         input.value = value;
+        input.id = value;
         let label = document.createElement("label");
         label.textContent = value;
+        label.htmlFor = value;
         div.append(input);
         div.append(label);
         filterSection.append(div);
