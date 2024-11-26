@@ -45,6 +45,24 @@ main .form {
 main .form h2 {
   margin-top: 5px;
 }
+main .pill {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #ff7d00;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 5px;
+  border-radius: 20px;
+  padding: 5px;
+}
+main .filter-section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
 main fieldset {
   border: none;
   padding: 0;

@@ -7,7 +7,7 @@ Nivå 1
     - Yrkesroll (man ska kunnna välja en av tre olika yrkesroller)
 
 
-[] Skapa ett objekt för varje ny anställd som ser ut på följande vis:
+[X] Skapa ett objekt för varje ny anställd som ser ut på följande vis:
     {
         name: Förnamn + Efternamn (string)
 
@@ -18,11 +18,13 @@ Nivå 1
         email: Förnamn.Efternamn@företag.se (string)
     }
 
-[] Visa ut all info om varje anställd i en lista.
+[X] Visa ut all info om varje anställd i en lista.
 
 
 Nivå 2
-[] Skapa en checkbox för varje yrkesroll som finns.
+[X] Skapa en checkbox för varje yrkesroll som finns.
 [] Lägg till funktionalitet för att filtrera de anställda baserat på yrkesroll.
-[] Skapa knappar för att sortera listan på förnamn (stigande och fallande), samt ålder (stigande och fallande).
+[] Skapa knappar för att sortera listan på:
+    [] Förnamn (stigande och fallande)
+    [] Ålder (stigande och fallande).
 

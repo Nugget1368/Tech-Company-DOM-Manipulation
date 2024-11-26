@@ -37,6 +37,20 @@ main{
             margin-top: 5px;
         }
     }
+    .pill{
+        @include flex(row, center, center);
+        border: 3px solid $color-4;
+        width: fit-content;
+        margin: 5px;
+        border-radius: 20px;
+        padding: 5px;
+        input{
+        }
+    }
+    
+    .filter-section{
+        @include flex(row wrap, flex-start, flex-start);
+    }
     fieldset{
         border: none;
         padding: 0;
