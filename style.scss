@@ -1,0 +1,77 @@
+@import "partials/_variables.scss";
+@import "partials/_mixins.scss";
+
+html, body{
+    margin: 0;
+    padding: 0;
+
+}
+header{
+    color: #f3f3f3;
+    background-color: $color-3;
+    width: 100%;
+    position: sticky;
+    top:0;
+    padding: 20px 0px;
+    h1{
+        margin: 0;
+    }
+}
+main{
+    @include flex(column, flex-start, stretch);
+    min-height: 100vh;
+    div{
+        @include flex(column);
+    }
+    .form{
+        @include flex(column, center, stretch);
+        box-sizing: border-box;
+        align-self: center;
+        min-width: 200px;
+        width: 50%;
+        margin: 15px;
+        background-color: #ffffff;
+        border-radius: 15px;
+        padding: 25px 15px;
+        h2{
+            margin-top: 5px;
+        }
+    }
+    fieldset{
+        border: none;
+        padding: 0;
+    }
+    .btn-container{
+        @include flex(row, flex-end);
+        margin-top: 10px;
+        button{
+            background-color: #034b8a;
+            margin-right: 10px;
+            padding: 7px;
+            border: #ffffff;
+            color: #ffffff;
+            border-radius: 10px;
+            &:hover{
+                cursor: pointer;
+                background-color: #1069b6;
+
+            }
+        }
+    }
+    #cancel-btn{
+        background-color: #ea3737;
+        &:hover{
+            cursor: pointer;
+            background-color: #fb4848;
+
+        }
+    }
+}
+footer{
+    background-color: $color-5;
+    color: #f3f3f3;
+    padding: 20px 0px;
+    h3{
+        margin: 0;
+    }
+}

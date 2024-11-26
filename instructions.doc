@@ -1,0 +1,28 @@
+Nivå 1
+
+[X] Skapa input-fält samt en knapp med texten “Registrera anställd”. Följande input-fält ska finnas.
+    - Förnamn
+    - Efternamn
+    - Ålder
+    - Yrkesroll (man ska kunnna välja en av tre olika yrkesroller)
+
+
+[] Skapa ett objekt för varje ny anställd som ser ut på följande vis:
+    {
+        name: Förnamn + Efternamn (string)
+
+        age: Ålder (number)
+
+        job: Yrkesroll (string)
+
+        email: Förnamn.Efternamn@företag.se (string)
+    }
+
+[] Visa ut all info om varje anställd i en lista.
+
+
+Nivå 2
+[] Skapa en checkbox för varje yrkesroll som finns.
+[] Lägg till funktionalitet för att filtrera de anställda baserat på yrkesroll.
+[] Skapa knappar för att sortera listan på förnamn (stigande och fallande), samt ålder (stigande och fallande).
+

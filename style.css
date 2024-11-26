@@ -1,0 +1,86 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  color: #f3f3f3;
+  background-color: #15616d;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  padding: 20px 0px;
+}
+header h1 {
+  margin: 0;
+}
+
+main {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  min-height: 100vh;
+}
+main div {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: stretch;
+}
+main .form {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: stretch;
+  box-sizing: border-box;
+  align-self: center;
+  min-width: 200px;
+  width: 50%;
+  margin: 15px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 25px 15px;
+}
+main .form h2 {
+  margin-top: 5px;
+}
+main fieldset {
+  border: none;
+  padding: 0;
+}
+main .btn-container {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-end;
+  align-items: stretch;
+  margin-top: 10px;
+}
+main .btn-container button {
+  background-color: #034b8a;
+  margin-right: 10px;
+  padding: 7px;
+  border: #ffffff;
+  color: #ffffff;
+  border-radius: 10px;
+}
+main .btn-container button:hover {
+  cursor: pointer;
+  background-color: #1069b6;
+}
+main #cancel-btn {
+  background-color: #ea3737;
+}
+main #cancel-btn:hover {
+  cursor: pointer;
+  background-color: #fb4848;
+}
+
+footer {
+  background-color: #7d3426;
+  color: #f3f3f3;
+  padding: 20px 0px;
+}
+footer h3 {
+  margin: 0;
+}/*# sourceMappingURL=style.css.map */
