@@ -1,4 +1,8 @@
 let employees = [];
+let filteredOptions = [];
+if (localStorage.getItem("employees")) {
+  employees = JSON.parse(localStorage.getItem("employees"));
+}
 const addEmployee = () => {
   let firstName = document.querySelector("input#first-name").value;
   let lastName = document.querySelector("input#last-name").value;
@@ -15,6 +19,7 @@ const addEmployee = () => {
     employees.push(employee);
     updateList(employees);
     cancelEmployee();
+    localStorage.setItem("employees", JSON.stringify(employees));
   } else {
     alert("Please enter a valid age");
   }
@@ -27,25 +32,32 @@ const cancelEmployee = () => {
   document.querySelector("select#profession").value = "none-chosen";
 };
 
-const updateList = (arrEmployees) => {
+const updateList = () => {
   let employeeList = document.querySelector("ul#employees-list");
-  let filters = filterList();
   employeeList.innerHTML = "";
-  arrEmployees.forEach((employee) => {
-    if(filters.includes(employee.job) || filters.includes("Alla") || filters.length === 0){
-        let li = document.createElement("li");
-        li.textContent = `${employee.name} ${employee.age} ${employee.job} ${employee.email}`;
-        employeeList.append(li);
+  let filters = filterList();
+  employees.forEach((employee) => {
+    if (
+      filters.includes(employee.job) ||
+      filters.includes("Alla") ||
+      filters.length === 0
+    ) {
+      let li = document.createElement("li");
+      li.textContent = `${employee.name} ${employee.age} ${employee.job} ${employee.email}`;
+      employeeList.append(li);
     }
   });
 };
 
 const filterList = () => {
-  let filteredOptions = [];
-  document.querySelectorAll(
-    "section.filter-section div input[type=checkbox]:checked"
-  ).forEach((checkbox) => {
-    filteredOptions.push(checkbox.value);
+  let allBoxes = document.querySelectorAll(
+    "section.filter-section div input[type=checkbox]"
+  );
+  filteredOptions = [];
+  allBoxes.forEach((box) => {
+    if (box.checked) {
+      filteredOptions.push(box.value);
+    }
   });
   return filteredOptions;
 };
@@ -60,7 +72,8 @@ document
 document
   .querySelector("button#cancel-btn")
   .addEventListener("click", cancelEmployee);
-document
-  .querySelectorAll("input[type=checkbox]").forEach((check) => {
-    check.addEventListener("change", () =>updateList(employees));
-  });
+document.querySelectorAll("input[type=checkbox]").forEach((check) => {
+  check.addEventListener("change", updateList);
+});
+
+updateList(employees);
