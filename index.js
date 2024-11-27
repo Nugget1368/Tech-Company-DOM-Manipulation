@@ -63,27 +63,20 @@ const filterList = () => {
   return filteredOptions;
 };
 
-const sortArray = (arr) => {
-  let select = document.querySelector("select#sort");
-  let options = [];
-  let opt = document.querySelectorAll("select#sort option");
-  opt.forEach((option) => {
-    options.push(option.value);
-  });
-  if (select.value === "Förnamn (stigande)") {
-    arr.sort((a, b) => a.name.localeCompare(b.name));
-    return arr;
-  } else if (select.value === "Förnamn (fallande)") {
-    arr.sort((a, b) => b.name.localeCompare(a.name));
-    return arr;
-  } else if (select.value === "Ålder (stigande)") {
-    arr.sort((a, b) => a.age - b.age);
-    return arr;
-  } else if (select.value === "Ålder (fallande)") {
-    arr.sort((a, b) => b.age - a.age);
-    return arr;
-  } else {
-    return arr;
+const sortArray = (employees) => {
+  const select = document.querySelector("select#sort");
+
+  switch (select.value) {
+    case "Förnamn (stigande)":
+      return employees.sort((a, b) => a.name.localeCompare(b.name));
+    case "Förnamn (fallande)":
+      return employees.sort((a, b) => b.name.localeCompare(a.name));
+    case "Ålder (stigande)":
+      return employees.sort((a, b) => a.age - b.age);
+    case "Ålder (fallande)":
+      return employees.sort((a, b) => b.age - a.age);
+    default:
+      return employees;
   }
 };
 
