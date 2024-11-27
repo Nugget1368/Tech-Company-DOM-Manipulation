@@ -9,7 +9,7 @@ const addEmployee = () => {
   let age = Number(document.querySelector("input#age").value);
   let job = document.querySelector("select#profession").value;
 
-  if (isNumber(age)) {
+  if (isNumber(age) && age > 0) {
     let employee = {
       name: `${firstName} ${lastName}`,
       age: age,
