@@ -36,6 +36,7 @@ const updateList = () => {
   let employeeList = document.querySelector("ul#employees-list");
   employeeList.innerHTML = "";
   let filters = filterList();
+  employees = sortArray(employees);
   employees.forEach((employee) => {
     if (
       filters.includes(employee.job) ||
@@ -62,10 +63,34 @@ const filterList = () => {
   return filteredOptions;
 };
 
+const sortArray = (arr) => {
+  let select = document.querySelector("select#sort");
+  let options = [];
+  let opt = document.querySelectorAll("select#sort option");
+  opt.forEach((option) => {
+    options.push(option.value);
+  });
+  if (select.value === "Förnamn (stigande)") {
+    arr.sort((a, b) => a.name.localeCompare(b.name));
+    return arr;
+  } else if (select.value === "Förnamn (fallande)") {
+    arr.sort((a, b) => b.name.localeCompare(a.name));
+    return arr;
+  } else if (select.value === "Ålder (stigande)") {
+    arr.sort((a, b) => a.age - b.age);
+    return arr;
+  } else if (select.value === "Ålder (fallande)") {
+    arr.sort((a, b) => b.age - a.age);
+    return arr;
+  } else {
+    return arr;
+  }
+};
+
 function isNumber(num) {
   return !isNaN(parseInt(num)) && isFinite(num);
 }
-
+//Event listeners
 document
   .querySelector("button#register-btn")
   .addEventListener("click", addEmployee);
@@ -75,5 +100,8 @@ document
 document.querySelectorAll("input[type=checkbox]").forEach((check) => {
   check.addEventListener("change", updateList);
 });
+document
+  .querySelector("select#sort")
+  .addEventListener("change", updateList);
 
 updateList(employees);
