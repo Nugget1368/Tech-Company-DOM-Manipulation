@@ -1,3 +1,5 @@
+
+
 //Bygg dropdown
 const buildDropdown = () => {
     let dropdown = document.querySelector("select#profession");
@@ -10,29 +12,27 @@ const buildDropdown = () => {
     });
 };
 
-//Bygg Filtrering
+//Build Filtering
 const buildFilter = () => {
-    let filterSection = document.querySelector(".filter-section");
-    let options = document.querySelectorAll("select#profession option");
+    const filterSection = document.querySelector(".filter-section");
+    const options = document.querySelectorAll("select#profession option");
     options.forEach(option => {
-        if(option.value === "Välj Yrkesroll"){
-            option.value = "Alla";
-        }
-        let value = option.value;
-        let div = document.createElement("div");
-        div.classList.add("pill");
-        let input = document.createElement("input");
-        input.type = "checkbox";
-        input.value = value;
-        input.id = value;
-        let label = document.createElement("label");
+        const value = option.value === "Välj Yrkesroll" ? "Alla" : option.value;
+        const pill = document.createElement("div");
+        pill.classList.add("pill");
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.value = value;
+        checkbox.id = value;
+        const label = document.createElement("label");
         label.textContent = value;
         label.htmlFor = value;
-        div.append(input);
-        div.append(label);
-        filterSection.append(div);
+        pill.append(checkbox);
+        pill.append(label);
+        filterSection.append(pill);
     });
 }
+
 
 const buildSort = () => {
     let select = document.querySelector("select#sort");
