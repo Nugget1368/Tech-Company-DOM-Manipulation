@@ -34,5 +34,17 @@ const buildFilter = () => {
     });
 }
 
+const buildSort = () => {
+    let select = document.querySelector("select#sort");
+    let options = ["Förnamn (stigande)", "Förnamn (fallande)", "Ålder (stigande)", "Ålder (fallande)"];
+    options.forEach(option => {
+        let opt = document.createElement("option");
+        opt.value = option;
+        opt.textContent = option;
+        select.append(opt);
+    });
+};
+
 buildDropdown();
 buildFilter();
+buildSort();
